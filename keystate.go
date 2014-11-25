@@ -4,11 +4,13 @@
 
 package main
 
+// KeyState maintains the state of the XOR key.
 type KeyState struct {
 	key string
 	keylen, keyidx int
 }
 
+// Create a new KeyState based on an input key of arbitrary length.
 func NewKeyState(key string) *KeyState {
 	keystate := new(KeyState)
 	keystate.key = key
@@ -18,6 +20,7 @@ func NewKeyState(key string) *KeyState {
 	return keystate
 }
 
+// Fetch the next byte of the KeyState and increment the internal cursor.
 func (keystate *KeyState) NextByte() byte {
 	nextbyte := keystate.key[keystate.keyidx]
 
