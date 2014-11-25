@@ -1,8 +1,14 @@
+// Olive O3HD/O4HD/O6HD firmware encryption provider.
+// Copyright 2014 John Ehringer <jhe@5khz.com>.
+// Provided under the terms of the MIT license in the included LICENSE file.
+
 package main
-import "os"
-import "bufio"
-import "fmt"
-import "flag"
+import (
+	"os"
+	"bufio"
+	"fmt"
+	"flag"
+)
 
 func main() {
 	input, output, mode, key, keylength := ReadFlags()

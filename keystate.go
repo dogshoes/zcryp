@@ -1,3 +1,7 @@
+// XOR encryption key manager for zcryp.
+// Copyright 2014 John Ehringer <jhe@5khz.com>.
+// Provided under the terms of the MIT license in the included LICENSE file.
+
 package main
 
 type KeyState struct {
