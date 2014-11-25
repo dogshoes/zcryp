@@ -17,6 +17,9 @@ func main() {
 	if key == nil {
 		fmt.Fprintln(os.Stderr, "A key must be supplied.")
 		os.Exit(-1)
+	} else if *key == "" {
+		fmt.Fprintln(os.Stderr, "The key can't be empty.")
+		os.Exit(-1)
 	}
 
 	buffsize := 1024
@@ -26,9 +29,10 @@ func main() {
 	var outwriter *bufio.Writer
 
 	if input != nil && output != nil {
+		// File mode
 		infile, inerr := os.Open(*input)
 		if inerr != nil {
-			fmt.Fprintln(os.Stderr, "can't get the stat of file %s", input)
+			fmt.Fprintln(os.Stderr, "Unable to open input file %s.", input)
 			os.Exit(-1)
 		}
 
@@ -37,7 +41,7 @@ func main() {
 
 		outfile, outerr := os.Create(*output)
 		if outerr != nil {
-			fmt.Fprintln(os.Stderr, "Can not creat temp file '%s'", output)
+			fmt.Fprintln(os.Stderr, "Unable to create output file %s.", output)
 			os.Exit(-1)
 		}
 
@@ -46,6 +50,7 @@ func main() {
 
 		fmt.Fprintln(os.Stderr, fmt.Sprintf("file mode, ZCRYP_BUFSIZ:%d len:%d", buffsize, keystate.keylen))
 	} else {
+		// Stream mode
 		inreader = bufio.NewReader(os.Stdin)
 		outwriter = bufio.NewWriter(os.Stdout)
 
