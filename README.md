@@ -43,3 +43,5 @@ You should end up with three files: SWUpgrade.xml which is unencrypted and conta
 ```
 
 The same principles here can be used for ODBInstall.tar.gz and other encrypted resources consumed by the Olive players.
+
+Since the method of encryption is a simple XOR, feeding an unencrypted file into zcryp will encrypt it.  This can be used to prepare modified updates for the Olive player.  However this should be done with extreme caution and no warranty is provided or implied.
