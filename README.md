@@ -4,10 +4,10 @@ An open source implementation of the zcryp program used on the Olive O3HD, O4HD,
 
 ### Installing
 
-[Install the go compiler for your operating system](http://golang.org/doc/install) and [configure your workspace environment](http://golang.org/doc/install#gopath).  Download podunpacker using the following command.
+[Install the go compiler for your operating system](http://golang.org/doc/install) and [configure your workspace environment](http://golang.org/doc/install#gopath).  Download zcryp using the following command.
 
 ```ShellSession
-[dogshoes@oxcart ~]# go get github.com/dogshoes/podunpacker
+[dogshoes@oxcart ~]# go get github.com/dogshoes/zcryp
 ```
 
 Finally, ensure that your $GOPATH/bin is in $PATH for ease of use.
